@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.markantoine.application.entities.Professor;
 import com.markantoine.application.repositories.ProfessorRepository;
-import com.markantoine.application.resource.services.exceptions.ObjectNotFoundException;
+import com.markantoine.application.services.exception.ObjectNotFoundException;
 
 @Service
 public class ProfessorService {
@@ -21,7 +21,7 @@ public class ProfessorService {
 	}
 	public Professor findById(String id) {
 		Optional<Professor> obj = repository.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado") );
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Professor não encontrado na base de dados") );
 	}
 	
 	public Professor insert(Professor obj){

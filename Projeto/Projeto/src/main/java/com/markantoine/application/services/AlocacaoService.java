@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.markantoine.application.entities.Alocacao;
 import com.markantoine.application.repositories.AlocacaoRepository;
-import com.markantoine.application.resource.services.exceptions.ObjectNotFoundException;
+import com.markantoine.application.services.exception.ObjectNotFoundException;
 
 @Service
 public class AlocacaoService {
@@ -22,7 +22,7 @@ public class AlocacaoService {
 	
 	public Alocacao findById(String id) {
 		Optional<Alocacao> obj = repository.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado") );
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Alocação não encontrada na base de dados") );
 	}
 	
 	public Alocacao insert(Alocacao obj){

@@ -7,9 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.markantoine.application.entities.Curso;
-import com.markantoine.application.entities.Curso;
 import com.markantoine.application.repositories.CursoRepository;
-import com.markantoine.application.resource.services.exceptions.ObjectNotFoundException;
+import com.markantoine.application.services.exception.ObjectNotFoundException;
 
 @Service
 public class CursoService {
@@ -23,7 +22,7 @@ public class CursoService {
 	
 	public Curso findById(String id) {
 		Optional<Curso> obj = repository.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado") );
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Curso não encontrado na base de dados") );
 	}
 	
 	public Curso insert(Curso obj){

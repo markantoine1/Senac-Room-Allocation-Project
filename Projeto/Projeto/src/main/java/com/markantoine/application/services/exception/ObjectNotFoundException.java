@@ -1,4 +1,4 @@
-package com.markantoine.application.resource.services.exceptions;
+package com.markantoine.application.services.exception;
 
 public class ObjectNotFoundException extends RuntimeException{
 	private static final long serialVersionUID = 1L;
