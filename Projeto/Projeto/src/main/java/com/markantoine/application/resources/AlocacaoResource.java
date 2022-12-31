@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.markantoine.application.entities.Alocacao;
-import com.markantoine.application.resource.services.AlocacaoService;
+import com.markantoine.application.services.AlocacaoService;
 
 @RestController
 @RequestMapping(value = "/alocacoes")

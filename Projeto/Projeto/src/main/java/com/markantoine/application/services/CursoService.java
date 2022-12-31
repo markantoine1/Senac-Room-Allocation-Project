@@ -1,4 +1,4 @@
-package com.markantoine.application.resource.services;
+package com.markantoine.application.services;
 
 import java.util.List;
 import java.util.Optional;
