@@ -1,13 +1,13 @@
 package com.markantoine.application.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import com.markantoine.application.entities.enums.Turno;
-
 
 @Document
 public class Professor implements Serializable{
@@ -16,17 +16,15 @@ public class Professor implements Serializable{
 	@Id
 	private String id;
 	private String nome;
-	
-	private Integer turno;
+	private String turno;
 	
 	public Professor() {
 	}
 
-	public Professor(String id, String nome, Turno turno) {
-		super();
+	public Professor(String id, String nome, String turno) {
 		this.id = id;
 		this.nome = nome;
-		setTurno(turno);;
+		this.turno = turno; 
 	}
 
 	public String getId() {
@@ -45,14 +43,13 @@ public class Professor implements Serializable{
 		this.nome = nome;
 	}
 
-	public Turno getTurno() {
-		return Turno.valueOf(this.turno);
+	public String getTurno() {
+		return turno;
 	}
 
-	public void setTurno(Turno turno) {
-		if(turno != null) {
-		this.turno = turno.getCode();
-	}}
+	public void setTurno(String turno) {
+		this.turno = turno;
+	}
 
 	@Override
 	public int hashCode() {
