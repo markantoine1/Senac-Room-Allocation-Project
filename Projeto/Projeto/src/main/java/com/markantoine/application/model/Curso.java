@@ -1,4 +1,4 @@
-package com.markantoine.application.entities;
+package com.markantoine.application.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -1,6 +1,8 @@
 package com.markantoine.application.resources;
 
 import java.net.URI;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.markantoine.application.entities.Alocacao;
+import com.markantoine.application.model.Alocacao;
 import com.markantoine.application.services.AlocacaoService;
 
 @RestController
@@ -38,6 +40,8 @@ public class AlocacaoResource {
 	
 	@PostMapping
  	public ResponseEntity<Alocacao> insert(@RequestBody Alocacao obj) {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		obj.setDate(new Date());
 		service.insert(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();

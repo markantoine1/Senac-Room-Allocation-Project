@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.markantoine.application.entities.Professor;
+import com.markantoine.application.model.Professor;
 import com.markantoine.application.repositories.ProfessorRepository;
 import com.markantoine.application.services.exception.ObjectNotFoundException;
 

@@ -1,4 +1,4 @@
-package com.markantoine.application;
+package com.markantoine.application.view;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

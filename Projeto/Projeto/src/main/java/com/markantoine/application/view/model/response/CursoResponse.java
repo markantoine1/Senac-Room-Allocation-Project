@@ -1,30 +1,22 @@
-package com.markantoine.application.entities;
+package com.markantoine.application.view.model.response;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document
-public class Professor implements Serializable{
+public class CursoResponse implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	@Id
 	private String id;
 	private String nome;
 	private String turno;
 	
-	public Professor() {
+	public CursoResponse(){
 	}
 
-	public Professor(String id, String nome, String turno) {
+	public CursoResponse(String id, String nome, String turno) {
 		this.id = id;
 		this.nome = nome;
-		this.turno = turno; 
+		this.turno = turno;
 	}
 
 	public String getId() {
@@ -64,8 +56,7 @@ public class Professor implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Professor other = (Professor) obj;
+		CursoResponse other = (CursoResponse) obj;
 		return Objects.equals(id, other.id);
 	}
-
 }

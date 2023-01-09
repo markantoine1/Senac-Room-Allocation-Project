@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.markantoine.application.entities.Professor;
+import com.markantoine.application.model.Professor;
 import com.markantoine.application.services.ProfessorService;
 
 @RestController

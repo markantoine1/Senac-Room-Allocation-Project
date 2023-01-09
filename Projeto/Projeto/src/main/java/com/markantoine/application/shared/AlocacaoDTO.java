@@ -1,18 +1,14 @@
-package com.markantoine.application.entities;
+package com.markantoine.application.shared;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
-public class Alocacao implements Serializable{
-	private static final long serialVersionUID = 1L;
-	
-	@Id
+import com.markantoine.application.model.Curso;
+import com.markantoine.application.model.Professor;
+
+public class AlocacaoDTO {
 	private String id;
 	private String sala;
 	private Date date;
@@ -24,10 +20,10 @@ public class Alocacao implements Serializable{
 	@DBRef
 	private Curso curso;
 
-	public Alocacao() {
+	public AlocacaoDTO() {
 	}
 	
-	public Alocacao(String id, String sala, Date date, String turno, Professor professor, Curso curso) {
+	public AlocacaoDTO(String id, String sala, Date date, String turno, Professor professor, Curso curso) {
 		this.id = id;
 		this.sala = sala;
 		this.date = date;
@@ -97,7 +93,8 @@ public class Alocacao implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Alocacao other = (Alocacao) obj;
+		AlocacaoDTO other = (AlocacaoDTO) obj;
 		return Objects.equals(id, other.id);
 	}
+	
 }

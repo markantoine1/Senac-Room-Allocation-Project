@@ -1,4 +1,4 @@
-package com.markantoine.application.resource.exceptions;
+package com.markantoine.application.resources.exceptions;
 
 import java.io.Serializable;
 
